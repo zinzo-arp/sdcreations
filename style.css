@@ -1,61 +1,61 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #333;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(30, 29, 29);
+    height: 100vh;
 }
 
-/* Header */
-header {
-  background: #4CAF50;
-  color: white;
-  padding: 20px;
-  text-align: center;
+.rays{
+    position: relative;
+    width: 500px;
+    height: 500px;
 }
 
-/* Navigation Bar */
-nav {
-  background: #333;
-  padding: 10px;
-  text-align: center;
+.ring{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 8px solid;
+    transform: translate(-50%,-50%) scale(0);
+    opacity: 0;
+    animation: expand 10s ease-out infinite;
+
 }
 
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
+.ring:nth-child(5n+1) { border-color: blue;}
+.ring:nth-child(5n+2) { border-color:yellow ;}
+.ring:nth-child(5n+3) { border-color:red ;}
+.ring:nth-child(5n+4) { border-color:white ;}
+.ring:nth-child(5n+5) { border-color: orangered;}
 
-nav a:hover {
-  color: #4CAF50;
-}
+.ring:nth-child(1) {animation-delay: 0s;}
+.ring:nth-child(2) {animation-delay: 1s;}
+.ring:nth-child(3) {animation-delay: 2s;}
+.ring:nth-child(4) {animation-delay: 3s;}
+.ring:nth-child(5) {animation-delay: 4s;}
+.ring:nth-child(6) {animation-delay: 5s;}
+.ring:nth-child(7) {animation-delay: 6s;}
+.ring:nth-child(8) {animation-delay: 7s;}
+.ring:nth-child(9) {animation-delay: 8s;}
+.ring:nth-child(10) {animation-delay: 9s;}
 
-/* Sections */
-section {
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
-  background: white;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
 
-section h2 {
-  color: #4CAF50;
-}
-
-/* Footer */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+@keyframes expand {
+    0% {
+        transform: translate(-50%,-50%) scale(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%,-50%) scale(15);
+        opacity: 0%;
+    }
 }
